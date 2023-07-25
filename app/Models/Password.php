@@ -30,10 +30,15 @@ class Password extends Model
 
     public function getIconAttribute(): string
     {
-        if ($this->service) {
-            return $this->service->icon_image;
+        if ($this->icon_image) {
+            return $this->icon_image;
         }
 
-        return '';
+        return $this->service->icon;
+    }
+
+    public static function getOrdered()
+    {
+        return self::orderBy('name')->get();
     }
 }

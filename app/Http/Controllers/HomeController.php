@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $passwords = Password::get();
+        $passwords = Password::getOrdered();
 
         return Inertia::render('Home', [
             'passwords' => $passwords,

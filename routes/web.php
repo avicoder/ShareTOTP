@@ -8,6 +8,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use App\Models\Password;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -23,6 +24,8 @@ use Inertia\Inertia;
 |
 */
 
+Route::model('otp', Password::class);
+
 Route::get('/', HomeController::class)
     ->name('home');
 
@@ -30,11 +33,17 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', DashboardController::class)
         ->name('dashboard');
-    Route::get('/test', TestController::class)
-        ->name('test');
 
     Route::resource('/users', UserController::class);
-    Route::resource('/passwords', PasswordController::class);
+    Route::resource('/otps', PasswordController::class)
+        ->names([
+            'index' => 'passwords.index',
+            'create' => 'passwords.create',
+            'store' => 'passwords.store',
+            'edit' => 'passwords.edit',
+            'update' => 'passwords.update',
+            'destroy' => 'passwords.destroy',
+        ]);
     Route::resource('/services', ServiceController::class);
 
     Route::get('/settings', [SettingsController::class, 'index'])

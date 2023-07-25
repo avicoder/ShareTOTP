@@ -33,7 +33,7 @@ export default function Login({ canResetPassword }) {
     return (
         <GuestLayout>
             <Head title="Log in" />
-            <Card>
+            <Card className="w-[350px]">
                 <div className="flex flex-col items-center mb-6">
                     <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
                     <p className="text-lg font-bold text-gray-600">

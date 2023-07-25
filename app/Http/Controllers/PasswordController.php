@@ -15,8 +15,7 @@ class PasswordController extends Controller
      */
     public function index()
     {
-        $passwords = Password::get()
-            ->toArray();
+        $passwords = Password::getOrdered();
 
         return Inertia::render('Password/Index', [
             'passwords' => $passwords,

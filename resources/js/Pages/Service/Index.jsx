@@ -29,7 +29,7 @@ export default function Users({ auth, services }) {
                 {services.map((user) => (
                     <Row key={user.id}>
                         <Cell>
-                            <img src={user.icon_image} width="25" />
+                            <img src={user.icon} width="25" />
                         </Cell>
                         <Cell>{user.name}</Cell>
                         <Cell>

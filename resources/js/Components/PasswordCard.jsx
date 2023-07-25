@@ -1,10 +1,24 @@
 import { useEffect, useState } from "react"
 import totp from 'totp-generator';
+import { useCopyToClipboard } from "usehooks-ts";
 
 export default function PasswordCard({ password }) {
+
     const [otp, setOtp] = useState('')
     const [progress, setProgress] = useState(100)
     const reducerPerSecond = 100 / password.period
+
+    const [value, copy] = useCopyToClipboard()
+    const [copied, setCopied] = useState(false)
+
+    const copyToClipboard = () => {
+        copy(otp)
+        setCopied(true)
+        let timeout = setTimeout(() => {
+            setCopied(false)
+            clearTimeout(timeout)
+        }, 1000)
+    }
 
     const generateOtp = () => {
         const token = totp(password.secret, {
@@ -62,8 +76,11 @@ export default function PasswordCard({ password }) {
                     <p className="text-sm text-center font-bold text-gray-600 mb-1">
                         {password.name}
                     </p>
-                    <pre className="border border-gray-100 text-center rounded text-sm py-1 px-2">
-                        {otp}
+                    <pre
+                        onClick={copyToClipboard}
+                        className="transition-all border border-gray-100 text-center rounded text-sm py-1 px-2 cursor-pointer hover:border-gray-300"
+                    >
+                        {copied ? 'Copied!' : otp}
                     </pre>
                 </div>
             </div>

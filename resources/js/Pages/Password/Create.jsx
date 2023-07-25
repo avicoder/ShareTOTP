@@ -14,12 +14,12 @@ import SelectInput from '@/Components/SelectInput';
 
 export default function Create({ auth, serviceList }) {
     const { data, setData, post, processing, errors } = useForm({
-        service_id: '',
+        service_id: serviceList[0].id,
         name: '',
         secret: '',
-        digits: '',
-        algorithm: '',
-        period: '',
+        digits: optionDigits[0].value,
+        algorithm: optionAlgorithms[0].value,
+        period: optionPeriods[0].value,
     })
 
     const submit = (e) => {

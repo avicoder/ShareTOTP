@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function __invoke()
     {
-        $passwords = Password::get();
+        $passwords = Password::getOrdered();
 
         return Inertia::render('Dashboard', [
             'passwords' => $passwords,
