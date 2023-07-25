@@ -21,10 +21,6 @@ composer install
 ```bash
 npm i && npm run build
 ```
-- Link the storage to public folder
-```bash
-php artisan storage:link
-```
 
 ## Running the app in local machine
 
