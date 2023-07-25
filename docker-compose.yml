@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: 'php artisan serve --host=0.0.0.0'
+    command: [sh, -c, "php artisan storage:link && php artisan serve --host=0.0.0.0"]
     volumes:
       - .:/app
     ports:
