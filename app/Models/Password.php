@@ -28,7 +28,7 @@ class Password extends Model
         return $this->belongsTo(Service::class);
     }
 
-    public function getIconAttribute(): string
+    public function getIconAttribute()
     {
         if ($this->icon_image) {
             return $this->icon_image;
