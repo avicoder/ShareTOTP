@@ -27,7 +27,7 @@ class SettingsController extends Controller
 
         if ($logo = $request->file('logo_file')) {
             $filename = ImageHelper::generateName($logo);
-            $settings->logo = "/logos/$filename";
+            $settings->logo = "/storage/logos/$filename";
             $logo->storeAs('logos', $filename, [
                 'disk' => 'public',
             ]);

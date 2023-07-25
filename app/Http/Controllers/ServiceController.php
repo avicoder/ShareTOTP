@@ -43,7 +43,7 @@ class ServiceController extends Controller
 
         if ( $icon = $request->file('icon_file') ) {
             $filename = ImageHelper::generateName($icon);
-            $service->icon_image = "/icons/$filename";
+            $service->icon_image = "/storage/icons/$filename";
             $icon->storeAs('icons', $filename, [
                 'disk' => 'public',
             ]);
@@ -87,7 +87,7 @@ class ServiceController extends Controller
 
         if ( $icon = $request->file('icon_file') ) {
             $filename = ImageHelper::generateName($icon);
-            $service->icon_image = "/icons/$filename";
+            $service->icon_image = "/storage/icons/$filename";
             $icon->storeAs('icons', $filename, [
                 'disk' => 'public',
             ]);

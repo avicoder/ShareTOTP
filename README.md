@@ -19,7 +19,11 @@ composer install
 ```
 - Install NodeJS on your machine and run following:
 ```bash
-npm run build
+npm i && npm run build
+```
+- Link the storage to public folder
+```bash
+php artisan storage:link
 ```
 
 ## Running the app in local machine
