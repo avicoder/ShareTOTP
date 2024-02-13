@@ -94,6 +94,10 @@ This project is a compact solution designed to facilitate the sharing of TOTP co
 ![Settings](https://github.com/avicoder/ShareTOTP/assets/2093260/b62397b2-1a69-4f25-8253-b5bde74be35e)
 
 
+## Security
+While authorization is required to access the Admin page, if you want to add an extra layer of protection to the homepage, consider using OAuth2proxy or Cloudflare Access. 
+Feel free to implement either of these solutions to enhance security.
+
 ---
 
 ## Contributing
