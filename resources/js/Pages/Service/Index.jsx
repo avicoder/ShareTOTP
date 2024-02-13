@@ -16,7 +16,7 @@ export default function Users({ auth, services }) {
                 </div>
             )}
         >
-            <Head title="Platform Services" />
+            <Head title="" />
 
             <Card>
                 <Table head={(

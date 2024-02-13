@@ -70,7 +70,7 @@ export default function PasswordCard({ password }) {
             </div>
             <div className="flex items-center space-x-3">
                 <div className="flex-shrink-0">
-                    <img className="h-12 w-12" src={password.icon} alt="" />
+                    <img className="h-6 w-6" src={password.icon} alt="" />
                 </div>
                 <div className="min-w-0 flex-1">
                     <p className="text-sm text-center font-bold text-gray-600 mb-1">

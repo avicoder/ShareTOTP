@@ -18,7 +18,7 @@ export default function Home({ passwords }) {
                     </p>
                 </div>
             </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="flex gap-4">
                 {passwords.map((password) => (
                     <PasswordCard key={password.id} password={password} />
                 ))}
